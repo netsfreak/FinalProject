@@ -1,0 +1,21 @@
+<div class="photo-gallery">
+
+ 
+
+    <div class="container">
+
+        <div class="row ">
+
+            <div *ngFor = 'let lst of appList' class="col-6">
+
+                <a [href]='lst.url' data-lightbox="photos"><img class="img-fluid" [src]='lst.url' style="padding:1rem;width:500px;height: 200px;"></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   
+
+</div>

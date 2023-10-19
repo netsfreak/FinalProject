@@ -1,0 +1,55 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0880412170513!2d77.01603027365927!3d11.03202115443001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857b6b981daf3%3A0x832d52bc7bec1221!2sLTIMindtree%20Limited!5e0!3m2!1sen!2sin!4v1697441226376!5m2!1sen!2sin" width="500px" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+
+        <div class="col">
+
+            <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.form.valid)">
+
+                <!-- we will place our fields here -->
+
+               <!--name-->
+
+                <div>
+
+                    <h1>Contact Us</h1>
+
+                    <label class="fw-bold">Name</label>
+
+                    <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required minlength="5" class="form-control">
+
+                    <!--bind name to ngModel, it's required with minimum 5 characters
+
+                        <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required minlength="5" class="form-control">
+
+                    show error only when field is not valid & it's dirty or form submited-->
+
+                    <small [hidden]= "name.valid || (name.pristine && !f.submitted)">
+
+                    Name is required (minimum 5 characters).
+
+                    </small><br>
+
+                    <label class="fw-bold">Email</label>
+
+                    <input type="text" name="email" [(ngModel)]="user.email" #name="ngModel" required  class="form-control">
+
+ 
+
+                    </div>
+
+                    <button class="btn btn-success" type="submit" style="padding: 0.5rem,0rem; margin: 1rem;">Submit</button>
+
+                </form>
+
+        </div>
+
+    </div>
+
+</div>
